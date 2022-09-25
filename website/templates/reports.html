@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block title %}Reports Made{% endblock %} {% block content %}
+<h1> Reports made</h1>
+<ul class="list-group list-group-flush" id="reports">
+    {% for report in user.reports %}
+    <li class="list-group-item">{{ report.data }}</li>
+    {% endfor %}
+</ul>
+
+<form method="post">
+    <textarea name="report" id="report" class="form-control"></textarea>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="/report">
+        <button class="btn btn-primary" type="button">REPORT HERE</button>
+        </a>
+    </div>
+</form>
+
+{%  %}

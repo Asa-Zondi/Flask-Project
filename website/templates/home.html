@@ -1,37 +1,33 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %}
 
 {% block content %}
-<br/>
+<h1> Reports made</h1>
 
-<br/>
+    <table border = 0>
+        <thead>
+        <td>Abuse<br/></td>
+        <td>Date Reported<br/></td>
+        <td>Name of Perpetrator<br/></td>
+        <td>Age<br/></td>
+        <td>Gender<br/></td>
+        <td>Relation<br/></td>
+        </thead>
 
-<br/>
+{% for row in report %}
+    <tr>
+        <td>{{row["name"]}}</td>
+        <td>{{row[abuse]}}</td>
+        <td>{{row[dates]}}</td>
+        <td>{{row[]}}</td>
+        <td>{{row[abuse]}}</td>
+    </tr>
 
-<div style="text-align: center;">
-    <div>
-        <h1>Are you experiencing any form of abuse?</h1>
-    </div>
-
+{% endfor %}
+</table>
     <br/>
-
-    <br/>
-    <div>
-        <h2>Is anyone you know being abused?</h2>
-    </div>
-
-
-    <br/>
-
-    <br/>
-
-
-    <div>
-        <h3>Feel Free to report it here</h3>
-    </div>
     <div class="d-grid gap-2 col-6 mx-auto">
         <a href="/report">
-        <button class="btn btn-primary" type="button">REPORT HERE</button>
+        <button class="btn btn-outline-success btn-lg" type="button">MAKE NEW REPORT HERE</button>
         </a>
     </div>
-</div>
 {% endblock %}

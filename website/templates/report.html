@@ -2,64 +2,9 @@
 
 {% block content %}
 <br/>
-<form method="post" align="center" style="font-weight:bold; margin: auto; width: 900px;">
+<form action="{{ url_for('auth.report')}}" method="post" align="center" >
   <div>
     <h3 align="center"> VICTIMS DETAILS</h3>
-  <div align="center">
-  <div class="row">
-    <div class="col">
-      <label for="firstname">First name</label>
-      <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First name">
-    </div>
-    <div class="col">
-      <label for="lastname">Last name</label>
-      <input type="text" class="form-control" id="lastname" placeholder="Last name">
-    </div>
-    <div class="col">
-      <label for="othername">Other name</label>
-      <input type="text" class="form-control" id="othername">
-    </div>
-  </div>
-    <div class="row">
-      <div class="col">
-      <label for="agev">Age</label>
-      <input type="integer" class="form-control" id="agev">
-    </div>
-      <div class="col">
-      <label for="genderv">Gender</label>
-      <select id="genderv" class="form-control">
-        <option selected>Choose...</option>
-        <option value="female">Female</option>
-        <option value="male">Male</option>
-      </select>
-    </div>
-    </div>
-  <div class="row">
-    <div class="col">
-      <label for="address">Address</label>
-      <input type="text" class="form-control" id="address" placeholder="0000 Town, City">
-    </div>
-    <div class="col">
-      <label for="province">Province</label>
-      <select name="choose" id="province" class="form-control">
-        <option selected>Choose...</option>
-        <option value="central">Central</option>
-        <option value="copperbelt">Copperbelt</option>
-        <option value="eastern">Eastern</option>
-        <option value="luapula">Luapula</option>
-        <option value="lusaka">Lusaka</option>
-        <option value="muchinga">Muchinga</option>
-        <option value="northern">Northern</option>
-        <option value="north-western">North-Western</option>
-        <option value="southern">Southern</option>
-        <option value="western">Western</option>
-      </select>
-    </div>
-    <div class="col">
-      <label for="phonenumber">Phone Number</label>
-      <input type="integer" class="form-control" id="phonenumber">
-    </div>
-  </div>
   <div class="row">
   <div class="col">
       <label for="abuse">Type of Abuse experienced</label>
@@ -69,7 +14,6 @@
       <option name="rape" value="rape">Rape</option>
       <option value="verbal">Verbal Abuse</option>
       <option value="battery">Battery(Beating)</option>
-      <option value="child-abuse">Child abuse</option>
     </select>
     </div>
   <div class="col">
@@ -103,7 +47,7 @@
     <div class="row">
       <div class="col">
       <label for="age">Age</label>
-      <input type="integer" class="form-control" id="age">
+      <input type="number" class="form-control" id="age" min="18">
     </div>
       <div class="col">
       <label for="gender">Gender</label>
@@ -132,9 +76,9 @@
     </div>
   </div>
   <br />
-  <br />
-  <button class="btn btn-primary" type="submit">Submit Report</button>
+  <button class="btn btn-outline-success btn-lg"  style="font-weight:bold;" type="submit">SUBMIT NEW REPORT</button>
   </div>
 </form>
+
 
 {% endblock %}
